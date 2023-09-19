@@ -1,0 +1,27 @@
+{
+  "name": "estrudo-de-gherkin",
+  "version": "1.0.0",
+  "description": "Estudo e aplicação do Gherkin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Abreufea/estudodeGherkin.git"
+  },
+  "author": "Fernando de Abreu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abreufea/estudodeGherkin/issues"
+  },
+  "homepage": "https://github.com/Abreufea/estudodeGherkin#readme",
+  "dependencies": {
+    "cypress": "^13.2.0",
+    "npx": "^10.2.2"
+  },
+  "devDependencies": {
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  }
+  
+}
