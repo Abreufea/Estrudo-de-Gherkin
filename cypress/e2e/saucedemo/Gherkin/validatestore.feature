@@ -3,7 +3,7 @@ Feature: Validate Store
     Background: Access SwagLabs Store
         Given I access  URL "https://www.saucedemo.com/v1/"
         And Type Login "standard_user" type and passeword "secret_sauce"
-        And I click on the magnifier
+        And I click on the buttonLogin
 
     @positiveLogin @acessStore @additens
     Scenario: Validate add intens in the Your Cart
@@ -13,7 +13,7 @@ Feature: Validate Store
         Then Your Cart
 
         Examples:
-            | Sauce Labs Backpack               |
+            | Sauce L abs Backpack              |
             | Sauce Labs Bolt T-Shirt           |
             | Sauce Labs Onesie                 |
             | Sauce Labs Bike Light             |
