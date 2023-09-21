@@ -1,5 +1,6 @@
 @e2e
-Feature: Validate Login to SwagLabs 
+Feature: Validate Login to SwagLabs in all scenarios
+ 
 
     Background: Access SwagLabs 
     Given I access  URL "https://www.saucedemo.com/v1/"
