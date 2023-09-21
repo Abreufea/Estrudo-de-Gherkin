@@ -1,4 +1,4 @@
-e2e @loginsucess
+@e2e @loginsucess
 Feature: Check problems in the store
     Background: Access SwagLabs Store
         Given I access  URL "https://www.saucedemo.com/v1/"
@@ -18,4 +18,3 @@ Feature: Check problems in the store
             | Sauce Labs Bike Light             |
             | Sauce Labs Fleece Jacket          |
             | Test.allTheThings() T-Shirt (Red) |
-

@@ -43,7 +43,7 @@ Feature: Validate Store
         And I add to the shopping cart
         And Acess the shopping cart
         And I click on the Checkout button
-        And Type First Name "Mario", type Last Name "Super", type ZipCode "0F8TAS"
+        And And I fill  the user-data wife radon data
         And I click in Finish my order
         Then I should see the message "THANK YOU FOR YOUR ORDER"
 

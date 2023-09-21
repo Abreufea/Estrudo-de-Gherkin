@@ -25,7 +25,7 @@ Feature: Validate the Nerd Store
     And I click on the magnifier
     Then I should see the menssage "Nenhum produto foi encontrado para a sua seleção."
 
-  Exemples: 
+   Examples: 
       | Benedito de Paula        |
       | Padre Marcelo            |
       | Pássaros do Brasil       |
