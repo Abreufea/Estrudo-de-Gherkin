@@ -7,7 +7,7 @@ Feature: Validate Store
 
     @positiveLogin @acessStore @additens
     Scenario Outline: Validate add items in Your Cart
-        When click in "<itensstore>"
+        When click on the "<itensstore>" in the store page
         And I add to the shopping cart
         And I click on the back button
         And I click on the cart button and access the cart page
