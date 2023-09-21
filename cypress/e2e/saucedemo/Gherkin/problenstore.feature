@@ -3,14 +3,13 @@ Feature: Check problems in the store
     Background: Access SwagLabs Store
         Given I access  URL "https://www.saucedemo.com/v1/"
         And Type Login "problem_user" type and passeword "secret_sauce"
-        And I click on the buttonLogin
+        And I click on the login button
 
     @problemiten  @additens
-    Scenario: validate problems when purchasing in this scenario
-        When click in "<itensstore>"
-        And Check the iten
-        And The iten should be a "<itensstore>"
-        Then If the iten not be a "<itensstore>", is a problem.
+    Scenario Outline: Validate problems when purchasing items in this case.
+        When I click on the  "<itensstore>" in the store page
+        And I check the iten name and picture. 
+        Then I should see a different iten.
 
         Examples:
             | Sauce L abs Backpack              |

@@ -18,7 +18,7 @@ Feature: Validate the amazon bookstore
       | Irmãos Karamazov         |
 
   @negativeFlow @invalidSearch
-  Scenario Outline: Try to search for invalid Books
+  Scenario: Try to search for invalid Books
     When I type in the search box "$*%)#_@__@(@"
     And I click on the magnifier
     Then I should see the bestselling books

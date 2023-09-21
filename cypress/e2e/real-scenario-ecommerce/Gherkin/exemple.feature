@@ -18,7 +18,7 @@ Feature: Validate that user is able to search for items
       | panic! at the disco |
 
   @negativeFlow @invalidSearch
-  Scenario Outline: Try to search for invalid items
+  Scenario: Try to search for invalid items
     When I type in the search box "$*%)#_@__@(@"
     And I click on the magnifier
     Then I should see an error saying that no item was found
