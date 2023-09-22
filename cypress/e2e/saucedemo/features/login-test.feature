@@ -11,20 +11,25 @@ Feature: Validate Login to SwagLabs in all documented scenarios.
         And I click on the login button 
         Then Access the store and see all items 
 
-    # @problenstologin @lokedlogin @invalidelogin
-    #     Scenario: Invalide Login 
-    #     When Type Login "locked_out_user" and type passeword "secret_sauce" 
-    #     And I click on the login button 
-    #     Then I should see the menssage "Epic sadface: Sorry, this user has been locked out." 
+    @problenstologin @lokedlogin @invalidelogin
+    Scenario: Invalide Login 
+        When I type Login locked_out_user 
+        And I type passeword secret_sauce
+        And I click on the login button 
+        Then I should see the menssage Sorry, this user has been locked out. 
 
-    #  @problemstore @failstore
-    #     Scenario: Problem store 
-    #     When Type Login "problem_user" and type passeword "secret_sauce" 
-    #     And I click on the login button  
-    #     Then access the store, but don't see the image of the items.
+        @problemstore @failstore
+    Scenario: Problem store 
+        When I type Login problem_user 
+        And  I type passeword secret_sauce 
+        And  I click on the login button  
+        And  I access the store
+        Then I see dog images in the items
 
-    # @performanceproblems @laginstore
-    #     Scenario: Problem to performance
-    #     When Type Login "performance_glitch_user" and type passeword "secret_sauce" 
-    #     And I click on the login button
-    #     Then I access the store, but I encounter speed problems that impact the experience.
+    @performanceproblems @laginstore
+    Scenario: Problem to performance
+        When I type Login performance_glitch_user 
+        And I type passeword secret_sauce
+        And I click on the login button
+        And  I access the store
+        Then I encounter speed problems that impact the experience.
