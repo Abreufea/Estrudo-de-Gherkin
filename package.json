@@ -28,5 +28,4 @@
     "nonGlobalStepDefinitions": false,
     "stepDefinitions": "cypress/support/step_definitions"
   }
- 
 }
