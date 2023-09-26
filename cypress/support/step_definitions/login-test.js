@@ -1,10 +1,4 @@
 import { Before, Given, When, And, Then } from "cypress-cucumber-preprocessor/steps";
-let stub;
-
-Before(() => {
-    cy.log("Executing before step");
-    stub = cy.stub();
-})
 
 Given("I access the SwagLabs Login page", () => {
     cy.visit('https://www.saucedemo.com/');

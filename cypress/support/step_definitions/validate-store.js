@@ -1,7 +1,5 @@
 import { Before, Given, When, And, Then } from "cypress-cucumber-preprocessor/steps";
 import { faker } from '@faker-js/faker';
-let stub;
-
 
 Given("I access the SwagLabs Login page", () => {
     cy.visit('https://www.saucedemo.com/');
@@ -38,7 +36,6 @@ And ('I fill the user-data whit random data', () =>{
 
 })
 
-
 And ('I click in finish my order', () =>{  
     cy.get('[data-test="finish"]').click();
 })
@@ -46,20 +43,26 @@ And ('I click in finish my order', () =>{
 Then ('I should see the message THANK YOU FOR YOUR ORDER!', () =>{  
     cy.contains('h2', 'Thank you for your order!').should('be.visible')
 
-
 })
 
-        // When I click on the  "<itensstore>" in the store page
-        // And I add to the shopping cart
-        // And I click on the back button
-        // And I Click Romeve "<itensstore>" from your cart
-        // Then I have a empy Cart
+When('I add all items to my shopping cart',  () => {
+    cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click();
+    cy.get('[data-test="add-to-cart-sauce-labs-bike-light"]').click();
+    cy.get('[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]').click();
+    cy.get('[data-test="add-to-cart-sauce-labs-fleece-jacket"]').click();
+    cy.get('[data-test="add-to-cart-sauce-labs-onesie"]').click();
+    cy.get('[data-test="add-to-cart-test.allthethings()-t-shirt-(red)"]').click();
+})
 
-        // Examples:
-        //     |itensstore                         |
-        //     | Sauce Labs Backpack               |
-        //     | Sauce Labs Bolt T-Shirt           |
-        //     | Sauce Labs Onesie                 |
-        //     | Sauce Labs Bike Light             |
-        //     | Sauce Labs Fleece Jacket          |
-        //     | Test.allTheThings() T-Shirt (Red) |
+And('I Romeve all itens from cart shopping', () => {
+    cy.get('[data-test="remove-sauce-labs-backpack"]').click();
+    cy.get('[data-test="remove-sauce-labs-bike-light"]').click();
+    cy.get('[data-test="remove-sauce-labs-bolt-t-shirt"]').click();
+    cy.get('[data-test="remove-sauce-labs-fleece-jacket"]').click();
+    cy.get('[data-test="remove-sauce-labs-onesie"]').click();
+    cy.get('[data-test="remove-test.allthethings()-t-shirt-(red)"]').click();
+})
+
+Then ('I have a empy Cart and comeback to shopping', () =>{  
+    cy.get('#continue-shopping').click();
+})
