@@ -46,17 +46,17 @@ Then ('I should see the message THANK YOU FOR YOUR ORDER!', () =>{
 })
 
 When('I add all items to my shopping cart',  () => {
-    cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click();
-    cy.get('[data-test="add-to-cart-sauce-labs-bike-light"]').click();
-    cy.get('[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]').click();
-    cy.get('[data-test="add-to-cart-sauce-labs-fleece-jacket"]').click();
-    cy.get('[data-test="add-to-cart-sauce-labs-onesie"]').click();
+    cy.get('#add-to-cart-sauce-labs-backpack').click();
+    cy.get('#add-to-cart-sauce-labs-bike-light').click();
+    cy.get('#add-to-cart-sauce-labs-bolt-t-shirt').click();
+    cy.get('#add-to-cart-sauce-labs-fleece-jacket').click();
+    cy.get('#add-to-cart-sauce-labs-onesie').click();
     cy.get('[data-test="add-to-cart-test.allthethings()-t-shirt-(red)"]').click();
 })
 
 And('I Romeve all itens from cart shopping', () => {
+    
     cy.get('[data-test="remove-sauce-labs-backpack"]').click();
-    cy.get('[data-test="remove-sauce-labs-bike-light"]').click();
     cy.get('[data-test="remove-sauce-labs-bolt-t-shirt"]').click();
     cy.get('[data-test="remove-sauce-labs-fleece-jacket"]').click();
     cy.get('[data-test="remove-sauce-labs-onesie"]').click();

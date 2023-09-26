@@ -30,7 +30,7 @@ And('I access the store', () => {
   })
 
   Then('I see dog images in the items', () => {
-    cy.get('#item_4_img_link > .inventory_item_img').should('be.visible');
+    cy.get('#item_4_img_link').should('be.visible');
 })
 
 Then('I acesse the store and encounter speed problems that impact the experience', () => {

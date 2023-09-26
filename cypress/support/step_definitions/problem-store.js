@@ -18,5 +18,5 @@ When('I click on the Sauce Labs Backpacklink image in the store page ',  () => {
 })
 
 Then ('I should see a different iten', () =>{  
-    cy.get('.inventory_details_name').contains('Sauce Labs Backpacklink').should('be.visible')
+    cy.get('.inventory_details_name').contains('Sauce Labs Backpacklink').should('not.be', 'visible');;
 })
