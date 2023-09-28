@@ -46,12 +46,15 @@ Then ('I should see the message THANK YOU FOR YOUR ORDER!', () =>{
 })
 
 When('I add all items to my shopping cart',  () => {
-    cy.get('#add-to-cart-sauce-labs-backpack').click();
-    cy.get('#add-to-cart-sauce-labs-bike-light').click();
-    cy.get('#add-to-cart-sauce-labs-bolt-t-shirt').click();
-    cy.get('#add-to-cart-sauce-labs-fleece-jacket').click();
-    cy.get('#add-to-cart-sauce-labs-onesie').click();
-    cy.get('[data-test="add-to-cart-test.allthethings()-t-shirt-(red)"]').click();
+    cy.get('.btn_primary.btn_inventory').each(($element) => {
+        cy.wrap($element).click(); 
+      });
+    // cy.get(".btn_primary.btn_inventory").eq(0).click();
+    // cy.get(".btn_primary.btn_inventory").eq(1).click();
+    // cy.get(".btn_primary.btn_inventory").eq(2).click();
+    // cy.get(".btn_primary.btn_inventory").eq(3).click();
+    // cy.get(".btn_primary.btn_inventory").eq(4).click();
+    // cy.get(".btn_primary.btn_inventory").eq(5).click();
 })
 
 And('I Romeve all itens from cart shopping', () => {
