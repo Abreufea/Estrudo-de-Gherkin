@@ -5,12 +5,10 @@ Given("I access the SwagLabs Login page", () => {
     And("I type Login {word}", (userName) =>{
         cy.get("#user-name").type(userName);
     })
-    And("I type passeword {word}", (userName) =>{
+    And("I type passeword {word} and click on the login button", (userName) =>{
         cy.get("#password").type(userName);
-    })
-    And('I click on the login button', () => {
-        cy.get("#login-button").click();
-    })
+        cy.findByRole('button', {name: /Login/i}).click()
+        })
 })
 
 When('I click on the Sauce Labs Backpacklink image in the store page ',  () => {
