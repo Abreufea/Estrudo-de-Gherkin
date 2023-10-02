@@ -4,12 +4,13 @@ Given("I access the SwagLabs Login page", () => {
     cy.visit('https://www.saucedemo.com/');
 })
 
-    When("I type Login {word}", (userName) =>{
-        cy.get("#user-name").type(userName);
-    })
+When("I type Login {word}", (userName) =>{
+    cy.get("#user-name").type(userName);
+})
 
-And("I type passeword {word}", (userName) =>{
-    cy.get("#password").type(userName);
+And("I type passeword {word} and click on the login button", (userName) =>{
+cy.get("#password").type(userName);
+cy.findByRole('button', {name: /Login/i}).click()
 })
 
 And('I click on the login button', () => {
@@ -18,9 +19,8 @@ And('I click on the login button', () => {
 Then('Access the store and see all items', () => {
     cy.url().should('be.equal', 'https://www.saucedemo.com/inventory.html')
   })
-  And('I click on the login button', () => {
-    cy.get("#login-button").click();
-})
+ 
+
   Then('I should see the menssage Sorry, this user has been locked out.', () => {
     cy.get('body').contains('Sorry, this user has been locked out.')
 })
@@ -34,6 +34,5 @@ And('I access the store', () => {
 })
 
 Then('I acesse the store and encounter speed problems that impact the experience', () => {
-    cy.get("#login-button").click();
-    
+ // Manual test about speed problems 
 })

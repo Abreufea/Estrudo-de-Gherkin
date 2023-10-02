@@ -6,10 +6,11 @@ module.exports = defineConfig({
     chromeWebSecurity: false,
     setupNodeEvents(on, config) {
       on('file:preprocessor', cucumber())
-      // implement node event listeners here
     },
     specPattern: "cypress/e2e/**/**/*.{js,jsx,ts,tsx,feature}",
   },
+    extends: "../node_modules/kcd-scripts/shared-tsconfig.json",
+    include: ["."]
 });
 
 
