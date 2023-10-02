@@ -4,18 +4,16 @@ Given("I access the SwagLabs Login page", () => {
     cy.visit('https://www.saucedemo.com/');
 })
 
-When("I type Login {word}", (userName) =>{
+When("I type Login {string}", (userName) =>{
     cy.get("#user-name").type(userName);
 })
 
-And("I type passeword {word} and click on the login button", (userName) =>{
-cy.get("#password").type(userName);
-cy.findByRole('button', {name: /Login/i}).click()
-})
+And("I type password {string} and click on the login button", (userName) =>{
+    cy.get("#password").type(userName);
+    cy.findByRole('button', {name: /Login/i}).click()
+    })
 
-And('I click on the login button', () => {
-    cy.get("#login-button").click();
-})
+
 Then('Access the store and see all items', () => {
     cy.url().should('be.equal', 'https://www.saucedemo.com/inventory.html')
   })

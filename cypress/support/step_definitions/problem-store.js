@@ -2,7 +2,7 @@ import { Before, Given, When, And, Then } from "cypress-cucumber-preprocessor/st
 
 Given("I access the SwagLabs Login page", () => {
     cy.visit('https://www.saucedemo.com/');
-    And("I type Login {word}", (userName) =>{
+    And("I type Login {string}", (userName) =>{
         cy.get("#user-name").type(userName);
     })
     And("I type passeword {word} and click on the login button", (userName) =>{

@@ -2,8 +2,8 @@
 Feature: Validate Store
     Background: Access SwagLabs Store
         Given I access the SwagLabs Login page
-        And I type Login standard_user
-        And I type passeword secret_sauce and click on the login button
+        And I type Login "standard_user"
+        And I type password "secret_sauce" and click on the login button
 
     @positiveLogin @acessStore @additens
     Scenario: Validate the purchase of one item
