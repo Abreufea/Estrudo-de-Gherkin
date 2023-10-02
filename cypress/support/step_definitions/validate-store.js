@@ -4,7 +4,8 @@ import { faker } from '@faker-js/faker';
 Given("I access the SwagLabs Login page", () => {
     cy.visit('https://www.saucedemo.com/');
     And("I type Login {word}", (userName) =>{
-        cy.get("#user-name").type(userName);
+        cy.findByRole('button', {name: /userName/i}).click()
+       // cy.get("#user-name").type(userName);
     })
     And("I type passeword {word}", (userName) =>{
         cy.get("#password").type(userName);

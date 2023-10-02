@@ -2,12 +2,12 @@
 Feature: Validate Store
     Background: Access SwagLabs Store
         Given I access the SwagLabs Login page
-        And I type Login standard_user 
+        And I type Login standard_user
         And I type passeword secret_sauce
         And I click on the login button
 
-     @positiveLogin @acessStore @additens
-     Scenario: Validate the purchase of one item
+    @positiveLogin @acessStore @additens
+    Scenario: Validate the purchase of one item
         When I click on the Sauce Labs Backpacklink image in the store page
         And I add to the shopping cart
         And I acess the cart page
@@ -23,7 +23,7 @@ Feature: Validate Store
         And I acess the cart page
         And I Romeve all itens from cart shopping
         Then I have a empy Cart and comeback to shopping
-       
+
 
     @positiveLogin @acessStore @additens @validatepurchase @successfulpurchase
     Scenario: Validate purchase all items
@@ -34,4 +34,3 @@ Feature: Validate Store
         And I click in finish my order
         Then I should see the message THANK YOU FOR YOUR ORDER!
 
-     
