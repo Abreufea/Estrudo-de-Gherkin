@@ -20,14 +20,28 @@
     "npx": "^10.2.2"
   },
   "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^18.0.6",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "@faker-js/faker": "^8.1.0",
     "@testing-library/cypress": "^10.0.1",
     "cypress": "^13.3.0",
     "cypress-cucumber-preprocessor": "^4.3.1",
+    "esbuild": "^0.19.4",
     "typescript": "^5.2.2"
   },
   "cypress-cucumber-preprocessor": {
+    "filterSpecs": true,
+    "omitFiltered": true,
     "nonGlobalStepDefinitions": false,
-    "stepDefinitions": "cypress/support/step_definitions"
+    "stepDefinitions": [
+      "cypress/support/step_definitions/*.js",
+      "cypress/support/step_definitions/*.ts",
+      "cypress/support/step_definitions/*/*.js",
+      "cypress/support/step_definitions/*/*.ts"
+    ],
+    "html": {
+      "enabled": true,
+      "output": "cypress/reports/html_report.html"
+    }
   }
 }

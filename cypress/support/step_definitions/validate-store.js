@@ -1,28 +1,28 @@
-import { Step, Given, When, And, Then } from "cypress-cucumber-preprocessor/steps";
+import { Step, Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
 import { faker } from '@faker-js/faker';
 
-When("I access the SwagLabs Login page", () => {
+When("I access the SwagLabs Login page another", () => {
     cy.visit('https://www.saucedemo.com/');
 })
 
-And('I type Login {string}', (userName) => {
+When('I type Login {string}', (userName) => {
     cy.get("#user-name").type(userName);
 })
 
-And("I type password {string}", (password) => {
+When("I type password {string}", (password) => {
     cy.get("#password").type(password);
 })
 
-And("I click on the login button", () => {
+When("I click on the login button", () => {
     cy.findByRole('button', { name: /Login/i }).click()
 })
 
 Then('Access the store and see all items', () => {
     cy.url().should('be.equal', 'https://www.saucedemo.com/inventory.html')
-})
+});
 
 Given('I sign in with user {string} and password {string}', (userName, password) => {
-    Step(this, `I access the SwagLabs Login page`);
+    Step(this, 'I access the SwagLabs Login page');
     Step(this, `I type Login "${userName}"`);
     Step(this, `I type password "${password}"`);
     Step(this, `I click on the login button`);
@@ -32,18 +32,18 @@ Given('I sign in with user {string} and password {string}', (userName, password)
 When('I click on the Sauce Labs Backpacklink image in the store page', () => {
     cy.contains('Sauce Labs Backpack').click();
 })
-And('I add to the shopping cart', () => {
+When('I add to the shopping cart', () => {
     cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click();
 })
-And('I acess the cart page', () => {
+When('I acess the cart page', () => {
     cy.get('.shopping_cart_link').click();
 })
 
-And('I click on the Checkout button', () => {
+When('I click on the Checkout button', () => {
     cy.get('[data-test="checkout"]').click();
 })
 
-And('I fill the user-data whit random data', () => {
+When('I fill the user-data whit random data', () => {
     cy.get('#first-name').type(faker.person.firstName());
     cy.get('#last-name').type(faker.person.lastName());
     cy.get('#postal-code').type(faker.location.zipCode())
@@ -51,7 +51,7 @@ And('I fill the user-data whit random data', () => {
 
 })
 
-And('I click in finish my order', () => {
+When('I click in finish my order', () => {
     cy.get('[data-test="finish"]').click();
 })
 
@@ -72,7 +72,7 @@ When('I add all items to my shopping cart', () => {
     // cy.get(".btn_primary.btn_inventory").eq(5).click();
 })
 
-And('I Romeve all itens from cart shopping', () => {
+When('I Romeve all itens from cart shopping', () => {
 
     cy.get('[data-test="remove-sauce-labs-backpack"]').click();
     cy.get('[data-test="remove-sauce-labs-bolt-t-shirt"]').click();
