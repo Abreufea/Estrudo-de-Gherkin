@@ -3,7 +3,8 @@ Feature: Check problems in the store
     Background: Access SwagLabs Store
         Given I access the SwagLabs Login page
         And I type Login "problem_user"
-        And I type password "secret_sauce" and click on the login button
+        And I type password "secret_sauce"
+        
         
     @problemiten  @additens
     Scenario: Validate problems when purchasing items in this case.

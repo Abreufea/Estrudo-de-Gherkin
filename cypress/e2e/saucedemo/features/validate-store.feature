@@ -1,9 +1,7 @@
 @e2e @loginsucess
 Feature: Validate Store
     Background: Access SwagLabs Store
-        Given I access the SwagLabs Login page
-        And I type Login "standard_user"
-        And I type password "secret_sauce" and click on the login button
+        Given I sign in with user "standard_user" and password "secret_sauce" 
 
     @positiveLogin @acessStore @additens
     Scenario: Validate the purchase of one item

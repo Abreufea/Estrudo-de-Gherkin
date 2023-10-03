@@ -1,16 +1,33 @@
-import { Before, Given, When, And, Then } from "cypress-cucumber-preprocessor/steps";
+import { Step, Given, When, And, Then } from "cypress-cucumber-preprocessor/steps";
 import { faker } from '@faker-js/faker';
 
-Given("I access the SwagLabs Login page", () => {
+When("I access the SwagLabs Login page", () => {
     cy.visit('https://www.saucedemo.com/');
-    And("I type Login {string}", (userName) => {
-        cy.get("#user-name").type(userName);
-    })
-    And("I type passeword {string} and click on the login button", (userName) => {
-        cy.get("#password").type(userName);
-        cy.findByRole('button', { name: /Login/i }).click()
-    })
 })
+
+And('I type Login {string}', (userName) => {
+    cy.get("#user-name").type(userName);
+})
+
+And("I type password {string}", (password) => {
+    cy.get("#password").type(password);
+})
+
+And("I click on the login button", () => {
+    cy.findByRole('button', { name: /Login/i }).click()
+})
+
+Then('Access the store and see all items', () => {
+    cy.url().should('be.equal', 'https://www.saucedemo.com/inventory.html')
+})
+
+Given('I sign in with user {string} and password {string}', (userName, password) => {
+    Step(this, `I access the SwagLabs Login page`);
+    Step(this, `I type Login "${userName}"`);
+    Step(this, `I type password "${password}"`);
+    Step(this, `I click on the login button`);
+    Step(this, `Access the store and see all items`);
+});
 
 When('I click on the Sauce Labs Backpacklink image in the store page', () => {
     cy.contains('Sauce Labs Backpack').click();

@@ -23,12 +23,11 @@
     "@faker-js/faker": "^8.1.0",
     "@testing-library/cypress": "^10.0.1",
     "cypress": "^13.3.0",
-    "cypress-cucumber-preprocessor": "^4.3.1"
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "typescript": "^5.2.2"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": false,
     "stepDefinitions": "cypress/support/step_definitions"
   }
-
- 
 }
