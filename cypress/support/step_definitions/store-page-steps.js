@@ -21,3 +21,8 @@ Then('I access the store and just see dog images', () => {
 Then('I access the store and see all items', () => {
     cy.url().should('be.equal', 'https://www.saucedemo.com/inventory.html')
 })
+
+Then('I access the store and see another item that is not the Sauce Labs Backpacklink', () => {
+    cy.get('.inventory_details_name').contains('Sauce Labs Backpacklink').should('not.be', 'visible');
+})
+//Sauce Labs Fleece Jacket
