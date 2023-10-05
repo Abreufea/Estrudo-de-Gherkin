@@ -5,7 +5,8 @@ When('I acess the cart page', () => {
 })
 
 Then('I have a empy Cart and comeback to shopping', () => {
-    cy.get('#continue-shopping').click();
+    //cy.get('#continue-shopping').click();
+    cy.findByText('Continue Shopping').click();
 })
 
 When('I add all store items to my shopping cart', () => {

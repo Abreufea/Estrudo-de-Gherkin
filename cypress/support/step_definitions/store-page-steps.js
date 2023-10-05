@@ -5,7 +5,8 @@ When('I access the store correctly', () => {
 })
 
 When('I click on the Sauce Labs Backpacklink image in the store page', () => {
-    cy.contains('Sauce Labs Backpack').click();
+    // cy.contains('Sauce Labs Backpack').click();
+    cy.findByText('Sauce Labs Backpack').click()
 })
 
 //Melhoras esse teste com a lógica do login

@@ -15,6 +15,7 @@ When("I type password {string}", (password) => {
 When("I click on the login button", () => {
     cy.findByRole('button', { name: /Login/i }).click()
 })
+
 Given('I sign in with user {string} and password {string}', (userName, password) => {
     Step(this, 'I access the SwagLabs Login page');
     Step(this, `I type Login "${userName}"`);
