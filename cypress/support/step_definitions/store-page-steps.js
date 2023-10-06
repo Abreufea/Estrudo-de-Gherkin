@@ -9,11 +9,9 @@ When('I click on the Sauce Labs Backpacklink image in the store page', () => {
     cy.findByText('Sauce Labs Backpack').click()
 })
 
-//Melhoras esse teste com a lógica do login
 When('I add to the shopping cart', () => {
     cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click();
 })
-
 
 Then('I access the store and just see dog images', () => {
     cy.get('#item_4_img_link').should('be.visible');
