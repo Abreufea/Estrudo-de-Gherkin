@@ -32,11 +32,11 @@ When('I click on the Login button', () => {
 })
 
 When('I click on the Reset App State button', () => {
-    cy.get('a[href="https://saucelabs.com/"]').click();
+    cy.get('#reset_sidebar_link').click();
 })
-// Apresneta problemas
+
 Then('I have the empy cart', () => {
-    cy.get('.cart_quantity_label').should('not.have.length')
+    cy.get('.inventory_item_name').should('not.have.length')
 })
 
 Then('I should see de login page', () => {
