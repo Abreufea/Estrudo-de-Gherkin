@@ -14,13 +14,13 @@ Feature: Validate Login to SwagLabs in all documented scenarios.
     @problenstologin @lokedlogin @invalidelogin
     Scenario: Invalide Login 
         When I type Login "locked_out_user" 
-        When I type password "secret_sauce"
-        When I click on the login button
+        And Start to type your And step here I type password "secret_sauce"
+        And Start to type your And step here I click on the login button
         Then I should see the menssage Sorry, this user has been locked out. 
 
     @problemstore @failstore
     Scenario: Problem store 
         When I type Login "problem_user" 
-        When I type password "secret_sauce"
-        When I click on the login button
+        And Start to type your And step here I type password "secret_sauce"
+        And Start to type your And step here I click on the login button
         Then I access the store and just see dog images

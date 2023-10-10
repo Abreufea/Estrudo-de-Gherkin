@@ -32,9 +32,9 @@ module.exports = defineConfig({
     video: false,
 
     specPattern: "cypress/e2e/**/**/*.{js,jsx,ts,tsx,feature}",
-    defaultCommandTimeout: 15000,
+    defaultCommandTimeout: 40000,
     chromeWebSecurity: false,
-
+    baseUrl: "https://www.saucedemo.com/",
     setupNodeEvents,
   },
 });

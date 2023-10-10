@@ -1,7 +1,7 @@
 import { Given, When, Then, Step } from '@badeball/cypress-cucumber-preprocessor';
 
 Given("I access the SwagLabs Login page", () => {
-    cy.visit('https://www.saucedemo.com/');
+    cy.visit('/');
 })
 
 When("I type Login {string}", (userName) => {
